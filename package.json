@@ -1,0 +1,43 @@
+{
+  "name": "tts-dev-helper",
+  "version": "0.1.0",
+  "description": "A simple CLI app to help make development, with version control, easier for Tabletop Simulator",
+  "bin": "dist/index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OhYea777/tts-dev-helper.git"
+  },
+  "keywords": [
+    "tts",
+    "tabletop-simulator",
+    "version-control",
+    "cli",
+    "development"
+  ],
+  "author": "OhYea777",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OhYea777/tts-dev-helper/issues"
+  },
+  "homepage": "https://github.com/OhYea777/tts-dev-helper#readme",
+  "dependencies": {
+    "@matanlurey/tts-editor": "github:matanlurey/tts-editor#dist",
+    "@matanlurey/tts-runner": "github:matanlurey/tts-runner#dist",
+    "@tts-tools/savefile": "^2.2.0",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.3.1",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base-typescript-prettier": "^5.1.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
+}

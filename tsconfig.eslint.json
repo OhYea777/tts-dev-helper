@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./"
+  },
+  "include": [".eslintrc.js", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
