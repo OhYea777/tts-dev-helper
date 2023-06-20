@@ -148,6 +148,7 @@ program
       .env('COMPILE_DEST')
       .makeOptionMandatory(true)
   )
+  .option('-r, --reload', 'send "Save & Play" command after compiling save')
   .action(compileSaveFile);
 
 program.parse(process.argv);
