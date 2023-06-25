@@ -85,12 +85,14 @@ export interface CompileSaveOptions {
   dest: string;
   source: string;
   reload?: boolean;
+  include?: string;
 }
 
 async function compileSaveFile({
   dest,
   source,
   reload = false,
+  include = '',
 }: CompileSaveOptions) {
   if (!(await fs.pathExists(source))) {
     throw new Error(`Source directory not found "${source}"`);
@@ -107,7 +109,7 @@ async function compileSaveFile({
   }
 
   console.info(`Reading "${source}"...`);
-  const saveFile = embedSave(source, { includePath: '' });
+  const saveFile = embedSave(source, { includePath: include });
   console.info(`Writing "${output}"...`);
   await fs.writeJson(dest, saveFile);
   console.info(`Wrote "${output}"...`);
@@ -149,6 +151,7 @@ program
       .makeOptionMandatory(true)
   )
   .option('-r, --reload', 'send "Save & Play" command after compiling save')
+  .option('-i, --include <dir>', 'a directory of lua files to include')
   .action(compileSaveFile);
 
 program.parse(process.argv);
