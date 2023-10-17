@@ -23,6 +23,7 @@ $ npm i -g tts-dev-helper
 # Command Line Interface
 
 Extract a TTS save to a given location:
+
 ```
 Usage: tts-dev-helper extract [options]
 
@@ -33,6 +34,7 @@ Options:
 ```
 
 Compile an extracted save directory to a TTS save:
+
 ```
 Usage: tts-dev-helper compile [options]
 
