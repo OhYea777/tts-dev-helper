@@ -1,5 +1,11 @@
 # tts-dev-helper
 
+## 0.1.5
+
+### Patch Changes
+
+- [`7603562`](https://github.com/OhYea777/tts-tools/commit/76035623e9ca7c90452c3b3e89f604b65e6d8145) Thanks [@OhYea777](https://github.com/OhYea777)! - Fix tts-dev-tools repo url
+
 ## 0.1.4
 
 ### Patch Changes
