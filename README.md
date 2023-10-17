@@ -1,2 +1,3 @@
-# tts-dev-helper
-A simple CLI app to help make development, with version control, easier for Tabletop Simulator
+# tts-tools
+
+A suite of tools for working with Tabletop Simulator (TTS).

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "OhYea777/tts-tools" }],
+  "commit": false,
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch"
+}

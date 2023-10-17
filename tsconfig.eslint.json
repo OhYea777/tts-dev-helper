@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./"
+    "allowJs": true
   },
-  "include": [".eslintrc.js", "src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "extends": "./tsconfig.base.json"
 }

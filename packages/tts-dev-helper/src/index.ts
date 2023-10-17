@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-import type { SaveFile, TTSObject } from '@tts-tools/savefile';
 import type { OutgoingJsonObject } from '@matanlurey/tts-editor';
+import type { SaveFile, TTSObject } from '@tts-tools/savefile';
 
 import fs from 'fs-extra';
-import TTS from '@matanlurey/tts-editor';
 import * as path from 'path';
 
-import { Option, Command } from 'commander';
-import { embedSave, writeExtractedSave } from '@tts-tools/savefile';
+import TTS = require('@matanlurey/tts-editor');
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { name, version, description } = require('../package.json');
+import { embedSave, writeExtractedSave } from '@tts-tools/savefile';
+import { Command, Option } from 'commander';
+
+import { description, name, version } from '../package.json';
 
 const program = new Command();
 
@@ -88,12 +88,7 @@ export interface CompileSaveOptions {
   include?: string;
 }
 
-async function compileSaveFile({
-  dest,
-  source,
-  reload = false,
-  include = '',
-}: CompileSaveOptions) {
+async function compileSaveFile({ dest, source, reload = false, include = '' }: CompileSaveOptions) {
   if (!(await fs.pathExists(source))) {
     throw new Error(`Source directory not found "${source}"`);
   }
@@ -115,7 +110,7 @@ async function compileSaveFile({
   console.info(`Wrote "${output}"...`);
 
   if (reload) {
-    const api = new TTS();
+    const api = new TTS.default();
     const json: OutgoingJsonObject[] = [
       {
         ui: saveFile.XmlUI,
@@ -138,10 +133,7 @@ program
   .command('compile')
   .description('compiles an extracted save directory to a TTS save')
   .addOption(
-    new Option(
-      '-s, --source <source>',
-      'source folder of existing extracted save'
-    )
+    new Option('-s, --source <source>', 'source folder of existing extracted save')
       .env('COMPILE_SOURCE')
       .makeOptionMandatory(true)
   )

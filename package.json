@@ -1,43 +1,43 @@
 {
-  "name": "tts-dev-helper",
-  "version": "0.1.2",
-  "description": "A simple CLI app to help make development, with version control, easier for Tabletop Simulator",
-  "bin": "dist/index.js",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "tts-tools",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OhYea777/tts-dev-helper.git"
+    "url": "git+https://github.com/OhYea777/tts-tools.git"
   },
-  "keywords": [
-    "tts",
-    "tabletop-simulator",
-    "version-control",
-    "cli",
-    "development"
-  ],
-  "author": "OhYea777",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/OhYea777/tts-dev-helper/issues"
+  "scripts": {
+    "release": "pnpm run build && changeset publish",
+    "build": "turbo run build --filter=tts-dev-helper",
+    "format": "pnpm run format:code",
+    "format:ci": "pnpm run format:imports && pnpm run format:code",
+    "format:code": "prettier -w \"**/*\" --ignore-unknown --cache",
+    "format:imports": "organize-imports-cli ./packages/*/tsconfig.json ./packages/*/*/tsconfig.json",
+    "lint": "eslint . --report-unused-disable-directives",
+    "version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run format",
+    "preinstall": "npx only-allow pnpm"
   },
-  "homepage": "https://github.com/OhYea777/tts-dev-helper#readme",
-  "dependencies": {
-    "@matanlurey/tts-editor": "github:matanlurey/tts-editor#dist",
-    "@matanlurey/tts-runner": "github:matanlurey/tts-runner#dist",
-    "@tts-tools/savefile": "^2.2.0",
-    "commander": "^11.0.0",
-    "fs-extra": "^11.1.1"
+  "engines": {
+    "node": ">=18.18.2",
+    "pnpm": ">=8.9.2"
   },
+  "packageManager": "pnpm@8.9.2",
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.3.1",
-    "eslint": "^8.43.0",
-    "eslint-config-airbnb-base-typescript-prettier": "^5.1.0",
-    "prettier": "^2.8.8",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "esbuild": "^0.19.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "only-allow": "^1.2.1",
+    "organize-imports-cli": "^0.10.0",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.15",
     "typescript": "^5.1.3"
   }
 }

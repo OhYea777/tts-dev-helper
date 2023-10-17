@@ -1,13 +1,1 @@
-{
-  "compilerOptions": {
-    "strict": true,
-    "target": "ESNext",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true
-  }
-}
+{}

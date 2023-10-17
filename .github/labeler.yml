@@ -1,0 +1,4 @@
+# See https://github.com/actions/labeler
+
+'pkg: tts-dev-helper':
+  - packages/tts-dev-helper/**

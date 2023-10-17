@@ -1,0 +1,5 @@
+**/*.d.ts
+packages/**/*.min.js
+packages/**/dist/**/*
+.github
+.changeset
