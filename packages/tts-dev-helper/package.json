@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OhYea777/tts-dev-helper.git",
+    "url": "git+https://github.com/OhYea777/tts-tools.git",
     "directory": "packages/tts-dev-helper"
   },
-  "bugs": "https://github.com/OhYea777/tts-dev-helper/issues",
-  "homepage": "https://github.com/OhYea777/tts-dev-helper#readme",
+  "bugs": "https://github.com/OhYea777/tts-tools/issues",
+  "homepage": "https://github.com/OhYea777/tts-tools/tree/main/packages/tts-dev-helper#readme",
   "exports": {
     ".": "./dist/index.js"
   },
