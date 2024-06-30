@@ -2,14 +2,13 @@
 import type { OutgoingJsonObject } from '@matanlurey/tts-editor';
 import type { SaveFile, TTSObject } from '@tts-tools/savefile';
 
+import { Command, Option } from 'commander';
+import { embedSave, writeExtractedSave } from '@tts-tools/savefile';
+
 import fs from 'fs-extra';
 import * as path from 'path';
 
 import TTS = require('@matanlurey/tts-editor');
-
-import { embedSave, writeExtractedSave } from '@tts-tools/savefile';
-import { Command, Option } from 'commander';
-
 import { description, name, version } from '../package.json';
 
 const program = new Command();
@@ -21,7 +20,7 @@ export interface ExtractSaveOptions {
   source: string;
 }
 
-async function extractSave({ dest, source }: ExtractSaveOptions) {
+export async function extractSave({ dest, source }: ExtractSaveOptions) {
   if (!(await fs.pathExists(source))) {
     throw new Error(`Save file not found "${source}"`);
   }
@@ -88,7 +87,12 @@ export interface CompileSaveOptions {
   include?: string;
 }
 
-async function compileSaveFile({ dest, source, reload = false, include = '' }: CompileSaveOptions) {
+export async function compileSaveFile({
+  dest,
+  source,
+  reload = false,
+  include = '',
+}: CompileSaveOptions) {
   if (!(await fs.pathExists(source))) {
     throw new Error(`Source directory not found "${source}"`);
   }
@@ -122,9 +126,9 @@ async function compileSaveFile({ dest, source, reload = false, include = '' }: C
 
     try {
       await api.saveAndPlay(json);
-      console.info(`Sent "Save & Play" command!`);
+      console.info('Sent "Save & Play" command!');
     } catch (err) {
-      console.warn(`Could not reload. Is TTS currently running?`, err);
+      console.warn('Could not reload. Is TTS currently running?', err);
     }
   }
 }
