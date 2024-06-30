@@ -1,5 +1,11 @@
 # tts-dev-helper
 
+## 0.1.6
+
+### Patch Changes
+
+- [`c2a899c5191f976163a2c781009a127f3a4e7dbc`](https://github.com/OhYea777/tts-tools/commit/c2a899c5191f976163a2c781009a127f3a4e7dbc) Thanks [@OhYea777](https://github.com/OhYea777)! - Update dependencies and switch to swc for building
+
 ## 0.1.5
 
 ### Patch Changes
