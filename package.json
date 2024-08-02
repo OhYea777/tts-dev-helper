@@ -5,7 +5,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OhYea777/tts-tools.git"
+    "url": "git+https://github.com/tts-tools/tts-tools.git"
   },
   "license": "MIT",
   "scripts": {

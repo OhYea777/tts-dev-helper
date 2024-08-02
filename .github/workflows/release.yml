@@ -12,7 +12,7 @@ defaults:
 jobs:
   changelog:
     name: Changelog PR or Release
-    if: ${{ github.repository_owner == 'OhYea777' }}
+    if: ${{ github.repository_owner == 'tts-tools' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

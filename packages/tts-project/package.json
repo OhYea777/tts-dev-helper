@@ -1,22 +1,22 @@
 {
-  "name": "tts-dev-helper",
-  "version": "0.1.6",
+  "name": "tts-project",
+  "version": "0.1.0",
   "description": "A simple CLI app to help make development, with version control, easier for Tabletop Simulator",
   "author": "OhYea777",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tts-tools/tts-tools.git",
-    "directory": "packages/tts-dev-helper"
+    "directory": "packages/tts-project"
   },
   "bugs": "https://github.com/tts-tools/tts-tools/issues",
-  "homepage": "https://github.com/tts-tools/tts-tools/tree/main/packages/tts-dev-helper#readme",
+  "homepage": "https://github.com/tts-tools/tts-tools/tree/main/packages/tts-project#readme",
   "exports": {
     ".": "./dist/index.js"
   },
   "main": "dist/index.js",
   "bin": {
-    "tts-dev-helper": "./dist/index.js"
+    "tts-project": "./dist/index.js"
   },
   "scripts": {
     "build": "pnpm types && swc src -d dist --strip-leading-paths",
@@ -30,24 +30,26 @@
     "tts",
     "tabletop-simulator",
     "version-control",
-    "cli",
     "development"
   ],
-  "dependencies": {
-    "@matanlurey/tts-editor": "github:matanlurey/tts-editor#dist",
-    "@matanlurey/tts-runner": "github:matanlurey/tts-runner#dist",
-    "@tts-tools/savefile": "^2.3.0",
-    "commander": "^11.1.0",
-    "fs-extra": "^11.2.0"
-  },
   "devDependencies": {
+    "@matanlurey/tts-save-files": "github:matanlurey/tts-save-format",
     "@swc/cli": "^0.4.0",
     "@swc/core": "^1.6.6",
-    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.9",
+    "@types/semver": "^7.5.8",
     "typescript": "^5.5.2"
   },
   "engines": {
-    "node": ">=18.18.2"
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "citty": "^0.1.6",
+    "consola": "^3.2.3",
+    "execa": "^9.3.0",
+    "giget": "^1.2.3",
+    "nypm": "^0.3.9",
+    "pathe": "^1.1.2",
+    "semver": "^7.6.3"
   }
 }

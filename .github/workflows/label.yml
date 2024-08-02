@@ -6,7 +6,7 @@ on:
 jobs:
   triage:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'OhYea777'
+    if: github.repository_owner == 'tts-tools'
     steps:
       - uses: actions/labeler@v4
         with:

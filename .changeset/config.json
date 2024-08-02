@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "OhYea777/tts-tools" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "tts-tools/tts-tools" }],
   "commit": false,
   "linked": [],
   "access": "public",

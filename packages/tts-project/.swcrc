@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "baseUrl": "src",
+    "target": "esnext",
+    "parser": {
+      "syntax": "typescript"
+    }
+  },
+  "module": {
+    "type": "commonjs",
+    "resolveFully": true,
+    "ignoreDynamic": true
+  },
+  "exclude": ["dist", "node_modules"]
+}
