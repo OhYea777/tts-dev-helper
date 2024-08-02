@@ -1,5 +1,11 @@
 # tts-dev-helper
 
+## 0.1.7
+
+### Patch Changes
+
+- [`70d0ca10b7c1504980f20bc7076e6653fbb34659`](https://github.com/tts-tools/tts-tools/commit/70d0ca10b7c1504980f20bc7076e6653fbb34659) Thanks [@OhYea777](https://github.com/OhYea777)! - Fix not unbundling properly
+
 ## 0.1.6
 
 ### Patch Changes
