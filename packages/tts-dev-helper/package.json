@@ -1,6 +1,6 @@
 {
   "name": "tts-dev-helper",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A simple CLI app to help make development, with version control, easier for Tabletop Simulator",
   "author": "OhYea777",
   "license": "MIT",
