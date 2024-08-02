@@ -3,7 +3,7 @@ import type { OutgoingJsonObject } from '@matanlurey/tts-editor';
 import type { SaveFile, TTSObject } from '@tts-tools/savefile';
 
 import { Command, Option } from 'commander';
-import { embedSave, writeExtractedSave } from '@tts-tools/savefile';
+import { embedSave as embedTTSSave, extractSave as extractTTSSave } from '@tts-tools/savefile';
 
 import fs from 'fs-extra';
 import * as path from 'path';
@@ -39,7 +39,7 @@ export async function extractSave({ dest, source }: ExtractSaveOptions) {
 
   console.log(`Extracting save to "${dest}"`);
   const saveFile = (await fs.readJson(source)) as SaveFile;
-  writeExtractedSave(saveFile, { output: dest });
+  extractTTSSave(saveFile, { output: dest });
   console.log(`Extracted save to "${dest}"`);
 }
 
@@ -108,7 +108,7 @@ export async function compileSaveFile({
   }
 
   console.info(`Reading "${source}"...`);
-  const saveFile = embedSave(source, { includePath: include });
+  const saveFile = embedTTSSave(source, { includePath: include });
   console.info(`Writing "${output}"...`);
   await fs.writeJson(dest, saveFile);
   console.info(`Wrote "${output}"...`);
